@@ -1056,6 +1056,8 @@ detectdistro () {
 				else
 					if [[ -x /usr/bin/sw_vers ]] && /usr/bin/sw_vers | grep -i 'Mac OS X' >/dev/null; then
 						distro="Mac OS X"
+					elif [[ -x /usr/bin/sw_vers ]] && /usr/bin/sw_vers | grep -i 'macOS' >/dev/null; then
+						distro="Mac OS X"
 					elif [[ -f /var/run/dmesg.boot ]]; then
 						distro=$(awk 'BEGIN {
 							distro = "Unknown"
